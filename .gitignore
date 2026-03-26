@@ -1,0 +1,23 @@
+# Bytecode / cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambiente virtual
+venv/
+.env/
+.venv/
+
+# Variáveis de ambiente
+.env
+
+# Logs
+logs/
+*.log
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
