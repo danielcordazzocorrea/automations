@@ -1,5 +1,8 @@
-from services.send_message import send_message
+from fastapi import FastAPI
 
-if __name__ == "__main__":
-    numbers = ['5512997492072', '5512997614335']
-    send_message(numbers)
+app = FastAPI()
+
+@app.post("/webhook")
+async def webhook(data: dict):
+    print("Received:", data)
+    return {"status": "ok"}
