@@ -2,6 +2,8 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from ai_assistent import AI_response
+from services.send_message import send_message
+
 app = FastAPI()
 
 load_dotenv()
@@ -33,7 +35,7 @@ async def webhook(data: dict):
 
         response_ai = AI_response(mensagem)
         print(response_ai)
-
+        send_message(URL_CHATWOOT, account_id, conversation_id, response_ai)
 
     else:
         print("MESSAGE_SENT_BY_ME")
