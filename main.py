@@ -33,7 +33,7 @@ async def webhook(data: dict):
 
         """)
 
-        response_ai = AI_response(mensagem)
+        response_ai = AI_response(numero, mensagem)
         print(response_ai)
         send_message(URL_CHATWOOT, account_id, conversation_id, response_ai)
 
