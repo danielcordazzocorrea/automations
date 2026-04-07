@@ -25,6 +25,3 @@ def get_history(session_id, limit=5):
         .execute()
     
     return res.data if res.data else []
-
-save_message(12345, "user", "Eai")
-print(get_history(12345))

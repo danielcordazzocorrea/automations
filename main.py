@@ -12,7 +12,7 @@ URL_CHATWOOT = os.getenv("URL_CHATWOOT")
 
 @app.post("/webhook")
 async def webhook(data: dict):
-
+    print("WEBHOOK_RECEIVED")
     received = data["message_type"]
 
     if received != "outgoing":

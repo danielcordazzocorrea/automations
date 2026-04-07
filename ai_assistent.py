@@ -7,7 +7,7 @@ load_dotenv()
 
 def AI_response(session_id, message):
     history = get_history(session_id)
-    
+    print(f"HISTORY: {history}")
     history.append({
         "role": "user",
         "content": message
