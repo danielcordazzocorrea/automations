@@ -20,8 +20,9 @@ def get_history(session_id, limit=5):
     res = supabase.table("messages")\
         .select("role, content")\
         .eq("session_id", session_id)\
-        .order("created_at")\
+        .order("created_at", desc=True)\
         .limit(limit)\
         .execute()
     
-    return res.data if res.data else []
+    # Inverte para ficar em ordem cronológica corre
+    return list(reversed(res.data)) if res.data else []
